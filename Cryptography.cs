@@ -13,7 +13,7 @@ public class Cryptography : MonoBehaviour
 
 
     /// <summary>
-    /// Шифровка файла и запись зашифрованой информации в ТОТ ЖЕ файл
+    /// ГГЁГґГ°Г®ГўГЄГ  ГґГ Г©Г«Г  ГЁ Г§Г ГЇГЁГ±Гј Г§Г ГёГЁГґГ°Г®ГўГ Г­Г®Г© ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГЁ Гў Г’ГЋГ’ Г†Г… ГґГ Г©Г«
     /// </summary>
     /// <param name="pathOrFile"></param>
     /// <param name="str"></param>
@@ -56,17 +56,15 @@ public class Cryptography : MonoBehaviour
     }
 
     /// <summary>
-    /// Душифровка файла и возврат строки(если последний параметр = false,
-    /// иначе создаться новый файл)
+    /// Г„ГіГёГЁГґГ°Г®ГўГЄГ  ГґГ Г©Г«Г  ГЁ ГўГ®Г§ГўГ°Г ГІ Г±ГІГ°Г®ГЄГЁ(ГҐГ±Г«ГЁ ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ© ГЇГ Г°Г Г¬ГҐГІГ° = false,
+    /// ГЁГ­Г Г·ГҐ Г±Г®Г§Г¤Г ГІГјГ±Гї Г­Г®ГўГ»Г© ГґГ Г©Г«)
     /// </summary>
     /// <param name="pathOrFile"></param>
     /// <param name="isFullPath"></param>
     /// <returns></returns>
     public static string FileDecryption(string pathOrFile,bool isFullPath, bool isReturnString = false)
     {
-        string path = PATH_TO_DIRECTORY;
-        if (!isFullPath) path += pathOrFile;
-        else path = pathOrFile;
+        string path = isFullPath ? pathOrFile : PATH_TO_DIRECTORY + pathOrFile;
         try
         {
             using (FileStream fileStream = new(path, FileMode.Open))
